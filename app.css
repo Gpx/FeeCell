@@ -1,0 +1,47 @@
+:root {
+  --field-size: 0;
+  --cell-size: calc(100vmin / var(--field-size));
+}
+
+* { box-sizing: border-box; }
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: helvetica;
+  background-color: #ecf0f1;
+}
+
+#app {
+  width: 100vmin;
+  height: 100vmin;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell {
+  height: var(--cell-size);
+  width: var(--cell-size);
+  background-color: #bdc3c7;
+  background-clip: content-box;
+  padding: 2px;
+  border-radius: 15%;
+  cursor: pointer;
+  line-height: var(--cell-size);
+  font-size: calc(var(--cell-size) / 1.5);
+  color: #fff;
+  text-align: center;
+}
+
+.cell.selected {
+  color: #2980b9;
+  background-color: #ecf0f1;
+  background-clip: border-box;
+}
+
+.cell.exploded {
+  background-color: #c0392b;
+}
